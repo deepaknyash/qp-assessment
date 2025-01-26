@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "7faca499-0dfe-4094-bf18-7420db1d37ad",
+		"name": "Grocery-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17664350"
+	},
+	"item": [
+		{
+			"name": "add_new_items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/groceries"
+			},
+			"response": []
+		},
+		{
+			"name": "add_new_items 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mango\",\n    \"price\": 15.30,\n    \"quantity\" : 70\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/groceries"
+			},
+			"response": []
+		},
+		{
+			"name": "get all items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/groceries"
+			},
+			"response": []
+		},
+		{
+			"name": "remove grocery item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/groceries/2"
+			},
+			"response": []
+		},
+		{
+			"name": "update existing grocery item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Apple\",\n    \"price\": 17.30,\n    \"quantity\" : 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/admin/groceries/1"
+			},
+			"response": []
+		},
+		{
+			"name": "manage inventory",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/groceries/1/inventory?quantity=90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"groceries",
+						"1",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view list of grocery items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin/groceries/1/inventory?quantity=90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"groceries",
+						"1",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book multiple grocery items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 1,\n        \"quantity\": 20\n    },\n    {\n        \"id\" : 3,\n        \"quantity\": 40\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/groceries/book"
+			},
+			"response": []
+		}
+	]
+}
